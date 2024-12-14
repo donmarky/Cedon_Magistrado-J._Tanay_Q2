@@ -13,7 +13,8 @@ public class CreaturePowerLevels {
         }
 
         // Bubble sort implementation (ascending order)
-        bubbleSort(powerLevels);
+       int[] bubbleSortedArray = powerLevels.clone();
+bubbleSort(bubbleSortedArray);
         System.out.println("\nBubble Sort (Ascending):");
         displayArray(powerLevels);
 
@@ -64,5 +65,35 @@ public class CreaturePowerLevels {
             System.out.print(value + " ");
         }
         System.out.println();
+    }
+    // Method to analyze power levels
+    public static void analyzePowerLevels(int[] array) {
+        int sumEven = 0;
+        int sumOdd = 0;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (int value : array) {
+            // Calculate sum of even and odd numbers
+            if (value % 2 == 0) {
+                sumEven += value;
+            } else {
+                sumOdd += value;
+            }
+            // Find minimum and maximum power levels
+            if (value < min) {
+                min = value;
+            }
+            if (value > max) {
+                max = value;
+            }
+        }
+        // Display analysis results
+        System.out.println("\nAnalysis:");
+        System.out.println("Sum of Even Numbers: " + sumEven);
+        System.out.println("Sum of Odd Numbers: " + sumOdd);
+        System.out.println("Minimum Power Level: " + min);
+        System.out.println("Maximum Power Level: " + max);
+        System.out.println("");
     }
 }
