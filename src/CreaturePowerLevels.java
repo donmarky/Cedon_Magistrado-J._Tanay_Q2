@@ -13,10 +13,11 @@ public class CreaturePowerLevels {
         }
 
         // Bubble sort implementation (ascending order)
-       int[] bubbleSortedArray = powerLevels.clone();
-bubbleSort(bubbleSortedArray);
+        int[] bubbleSortedArray = powerLevels.clone();
+        bubbleSort(bubbleSortedArray);
         System.out.println("\nBubble Sort (Ascending):");
-        displayArray(powerLevels);
+         displayArray(bubbleSortedArray);
+
 
         // Selection sort implementation (descending order)
         selectionSort(powerLevels);
